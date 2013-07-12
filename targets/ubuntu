@@ -4,12 +4,7 @@
 # found in the LICENSE file.
 REQUIRES='unity'
 DESCRIPTION='Installs the Ubuntu desktop distribution (Approx. 1100MB)'
-HOSTBIN='startdm'
 . "${TARGETSDIR:="$PWD"}/common"
 
 ### Append to prepare.sh:
-apt-get -y install ubuntu-desktop `noauto network-manager firefox xorg`
-
-TIPS="$TIPS
-You can start Ubuntu via the startdm host command: sudo startdm
-"
+install ubuntu-desktop -- network-manager firefox xorg
